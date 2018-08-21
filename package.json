@@ -1,0 +1,36 @@
+{
+    "name": "scl-2018-01-fe-markdown",
+    "version": "0.1.0",
+    "description": "Libreria mdLinks - 1er Proyecto del Track Laboratoria",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "build": "babel src -d lib",
+        "eslint": "eslint --ext .js src/ test/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iMade13/scl-2018-01-FE-markdown.git"
+    },
+    "keywords": [
+        "test",
+        "development",
+        "javascript",
+        "nodejs"
+    ],
+    "author": "Madeleine M <madeleine1302@gmail.com> (https://github.com/imade13)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/iMade13/scl-2018-01-FE-markdown/issues"
+    },
+    "homepage": "https://github.com/iMade13/scl-2018-01-FE-markdown#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "eslint": "^5.4.0",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-promise": "^4.0.0",
+        "jest": "^23.5.0"
+    }
+}
