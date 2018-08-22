@@ -3,8 +3,19 @@
     "version": "0.1.0",
     "description": "Libreria mdLinks - 1er Proyecto del Track Laboratoria",
     "main": "index.js",
+    "jest": {
+        "verbose": true,
+        "coverageThreshold": {
+            "global": {
+                "branches": 70,
+                "functions": 70,
+                "lines": 70,
+                "statements": 70
+            }
+        }
+    },
     "scripts": {
-        "test": "jest",
+        "test": "jest --coverage",
         "build": "babel src -d lib",
         "eslint": "eslint --ext .js src/ test/"
     },
@@ -35,5 +46,8 @@
         "eslint-plugin-standard": "^3.1.0",
         "jest": "^23.5.0",
         "nodemon": "^1.18.3"
+    },
+    "dependencies": {
+        "commander": "^2.17.1"
     }
 }
