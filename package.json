@@ -1,5 +1,5 @@
 {
-    "name": "scl-2018-01-fe-markdown",
+    "name": "markdown-links",
     "version": "0.1.0",
     "description": "Libreria mdLinks - 1er Proyecto del Track Laboratoria",
     "main": "index.js",
@@ -13,6 +13,9 @@
                 "statements": 70
             }
         }
+    },
+    "bin": {
+        "mdLink": "./cli.js"
     },
     "scripts": {
         "test": "jest --coverage",
@@ -48,6 +51,9 @@
         "nodemon": "^1.18.3"
     },
     "dependencies": {
-        "commander": "^2.17.1"
+        "commander": "^2.17.1",
+        "marked": "^0.5.0",
+        "node-fetch": "^2.2.0",
+        "promise-path": "^1.2.7"
     }
 }

@@ -1,30 +1,85 @@
-#!/usr/bin/env node
-
-const program = require('commander');
 const path = require('path');
+const fs = require('fs');
+const fetch = require('node-fetch');
+const Marked = require('marked');
 
-'use strict';
+let route = './src'
+let fileRoute;
+let filePath = './src/prueba/readme.md'
 
-//Command Line de la Libreria
-program
-    .version('0.1.0')
-    .command('command md-links <path-to-file> [optional]')
-    .description('Read all the links of a readme.md file')
-    .option('--validate', '-v', '--stats')
-    .action()
 
-program.parse(process.argv); // Para realizar una nueva declaración.
+//Validar que sea un archivo .md
+function validateMD(route) {
+    let extension = path.extname(route)
+    if (extension != '.md') {
+        return console.log('No es un archivo .md')
+    } else {
+        readFile(filePath)
+    }
+};
 
-//Función para retornar la extensión del archivo
-function checkPath(ext) {
-    return path.extname(ext);
+//Leer el directorio y convertirla en una ruta absoluta
+const readDirectory = (route) => {
+    return new Promise((resolve, reject) => {
+        fs.readdir(route, (err, files) => {
+            if (err) {
+                return reject(err)
+            }
+            return resolve(files)
+        })
+    })
+
+}
+readDirectory(route)
+    .then((dirFiles) => {
+        const filePromises = dirFiles.forEach((file) => {
+            fileRoute = path.resolve(route, file);
+            console.log(fileRoute)
+        });
+        //return Promise.all(filePromises).then((filesData) => { console.log(filesData) })
+    })
+    .catch((err) => {
+        console.error("Error > " + err);
+    })
+
+//Función para leer la data del archivo readme.md 
+function readFile(filePath) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(filePath, 'utf-8', (error, data) => {
+            if (error) {
+                return reject(error);
+            }
+            return resolve(data);
+        });
+    });
+};
+readFile(filePath)
+    .then((data) => {
+        markdownLinkExtractor(data)
+    })
+    .catch((error) => {
+        console.error("Error > " + error);
+    });
+
+
+//Extraer los links del archivo readme.md 
+function markdownLinkExtractor(markdown) {
+    const links = [];
+    const renderer = new Marked.Renderer();
+
+    renderer.link = function(href, title, text) {
+        links.push({
+            href: href,
+            text: text,
+            title: title,
+        });
+    };
+
+    Marked(markdown, { renderer: renderer });
 }
 
-module.exports = checkPath;
+return fetch(url.href).then(res => {
 
-
-// const filename = path.extname('/Users/Refsnes/readme.md'); //	Returns the file extension of a path
-// console.log(filename);
-
-// const ext = path.relative('C:\\orandea\\test\\aaa', 'C:\\orandea\\impl\\bbb'); // Returns the relative path from one specified path to another specified path
-// console.log(ext);s
+            url.status = res.status;
+            url.statusText = res.statusText;
+            return url;

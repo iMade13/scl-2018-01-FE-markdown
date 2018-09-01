@@ -1,5 +1,5 @@
-const checkPath = require('../index')
+const validateMD = require('../md-links')
 
 test('Validar que sea un archivo markdown', () => {
-    expect(checkPath('/Users/README.md')).toBe('.md');
+    expect(validateMD('/Users/README.md')).toBe('.md');
 });
