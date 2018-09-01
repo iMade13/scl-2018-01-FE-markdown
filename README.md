@@ -8,13 +8,14 @@ Se abordaron los issues y milestones para la implementtación de la librería.
 ## Instalación de Librería
 ---
 ~~~
-$ npm install imade13-mdlinks
+$ npm install imade13-md-links
 ~~~
 
 ## Modo de uso
 El ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente manera a través de la terminal:
 
-md-links <path-to-file> [options]
+`md-links <path-to-file> [options]`
+
 ---
 ~~~
 $ md-links ./some/example.md

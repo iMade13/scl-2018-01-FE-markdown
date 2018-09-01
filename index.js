@@ -77,9 +77,3 @@ function markdownLinkExtractor(markdown) {
 
     Marked(markdown, { renderer: renderer });
 }
-
-return fetch(url.href).then(res => {
-
-            url.status = res.status;
-            url.statusText = res.statusText;
-            return url;
