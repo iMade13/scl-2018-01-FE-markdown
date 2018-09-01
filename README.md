@@ -1,7 +1,9 @@
 # Markdown Links
 
 ## Descripción
-Librería para extraer los links de un archivo con formato `Markdown` y verificar que los links sean válidos. 
+Librería para extraer los links de un archivo con formato `Markdown` y verificar que los links sean válidos. Posteriormente se podrán consultar las estádisticas de los links únicos y rotos.
+
+Se abordaron los issues y milestones para la implementtación de la librería. 
 
 ## Instalación de Librería
 ---
