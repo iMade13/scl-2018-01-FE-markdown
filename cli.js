@@ -12,6 +12,7 @@ program
     .description('Read all the links of a readme.md file')
     .option('-v, --validate', 'Validate that the links are ok or fail')
     .option('-s, --stats', 'Stats about all links searching')
-    .action(mdLinks)
+    .action()
 program.parse(process.argv);
-// Para realizar una nueva declaración.
+console.log(process.argv)
+    // Para realizar una nueva declaración.

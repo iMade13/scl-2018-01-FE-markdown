@@ -17,7 +17,7 @@ let checkPath = function(route) {
     }
 }
 
-let newPath = checkPath('./src/prueba/readme.md')
+let newPath = checkPath('./src')
     //console.log(newPath)
 
 //Validar que sea un archivo '.md' cuado la ruta dada sea un archivo
@@ -120,10 +120,24 @@ function validateLink(links) {
                     return e;
                 }));
         });
-        Promise.all(res).then((values) => {
-            // console.log(values)
-            resolve(values)
-            reject();
-        });
+        Promise.all(res)
+            .then((values) => {
+                resolve(values)
+            })
+            .catch((err) => { if (err) reject(err) });
     });
+};
+
+// function mdLinks(path, options) {
+//     return new Promise((resolve, reject) => {
+//         if (err) reject(err);
+//         return resolve(info)
+//     })
+// }
+// mdLinks(path, options)
+//     .then()
+
+
+module.exports = {
+    validateMD
 };
