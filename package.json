@@ -1,8 +1,8 @@
 {
-    "name": "imade13-mdLinks",
+    "name": "imade13-mdlinks",
     "version": "0.1.0",
     "description": "Libreria mdLinks - 1er Proyecto del Track Laboratoria",
-    "main": "index.js",
+    "main": "./index.js",
     "jest": {
         "verbose": true,
         "coverageThreshold": {
@@ -15,7 +15,7 @@
         }
     },
     "bin": {
-        "mdLink": "./cli.js"
+        "md-links": "./cli.js"
     },
     "scripts": {
         "test": "jest --coverage",

@@ -35,18 +35,12 @@ $ md-links --version
 ~~~
 
 *  `--help`
-
 Ayuda para los comandos.
 ~~~
-
-$ md-links --help
- Usage: cli [options] <path>
-
   Options:
     -V, --version   output the version number
     -h, --help      output usage information
     -v, --validate  HTTP request to find out if the link works or not
-   
 ~~~
 
 *  `--validate`
