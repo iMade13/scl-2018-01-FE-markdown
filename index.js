@@ -37,26 +37,6 @@ function run() {
 }
 run()
 
-//function para ejecutar los comandos 
-// const mdLinks = () => {
-//     return new Promise((reject, resolve) => {
-//         if (program.option === validar) {
-//             run()
-//             validateLink(links)
-//         } else {
-//             run()
-//             return resolve(response)
-//         }
-//         return reject()
-//     })
-// }
-// mdLinks()
-//     .then((a) => {
-
-//     })
-//     .catch((error) => {
-//         console.error("Error 0> " + error);
-//     });
 
 //Validar que sea un archivo '.md' cuado la ruta dada sea un archivo
 function validateMD(newPath) {
