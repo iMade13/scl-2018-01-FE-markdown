@@ -54,16 +54,6 @@ $ md-links ./some/example.md --validate
 ./some/example.md http://google.com/ ok 301 Google
 ~~~
 
-* `--stats`
-
-Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas básicas sobre los links.
-
-~~~
-$ md-links ./some/example.md --stats
-Total: 3
-Unique: 3
-~~~
-
 ## Preámbulo
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
