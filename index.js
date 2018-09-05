@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const Marked = require('marked');
-const color = require('colors')
+const colors = require('colors')
 const program = require('commander');
 
 const route = process.argv[2]
@@ -139,7 +139,9 @@ function markdownLinkExtractor(markdown, infoLine) {
     Marked(markdown, { renderer: renderer });
 
     //return links
+
     entregarLinks(links)
+    validateLink(links)
 }
 
 //Entregar los links impresos 
@@ -148,7 +150,10 @@ function entregarLinks(links) {
         href = element.href
         text = element.text
         line = element.line
-        let result = (`${href} - ${text.blue} - ${line}`)
+        let result = (`
+    Link: ${href} 
+    Text: ${text.blue}
+    Line: ${line}`)
         return console.log(result)
     });
 }
@@ -174,7 +179,21 @@ function validateLink(links) {
         });
         Promise.all(res)
             .then((values) => {
-                console.log(values)
+                values.forEach(e => {
+                    href = e.href
+                    text = e.text
+                    line = e.line
+                    status = e.status
+                    statusText = e.statusText
+                    let result2 =
+                        (` 
+    Link: ${href.blue}
+    Texto: ${text.blue}
+    Estado: ${status}
+    Texto de estado: ${statusText.blue} 
+`)
+                    return console.log(result2)
+                });
                 resolve(values)
             })
             .catch(error => {
@@ -182,7 +201,6 @@ function validateLink(links) {
             });
     })
 }
-
 
 
 module.exports = {
